@@ -7,22 +7,6 @@
 Welcome to my personal GitHub repository! This space will showcase projects and contributions related to cybersecurity research, threat intelligence, reverse engineering, and more. Below is a summary of what you'll find here.
 
 ---
-## Testing Lab
-
-```mermaid
-flowchart TD
-  A("Main Station") --> B("SIEM")
-    D("Kali") --> B
-    E("Domain Controller") --> B
-    F("Windows 10") --> B
-    H("Ubuntu") --> B
-    B --> G("SOAR")
-    G --> D
-    G --> E
-    G --> F
-    G --> H
-```
----
 
 ## Projects and Areas of Focus
 
@@ -46,13 +30,35 @@ flowchart TD
 ### 5. **Other**
    - Free certification/courses
    - Tools recommandations
+   - Testing Lab
+
+---
+
+## Testing Lab
+
+```mermaid
+flowchart TD
+  A("Main Station") --> B("SIEM")
+    D("Kali") --> B
+    E("Domain Controller") --> B
+    F("Windows 10") --> B
+    H("Ubuntu") --> B
+    I("Windows Server") --> B
+    B --> G("SOAR")
+    E --> I
+    I --> E
+    G --> D
+    G --> E
+    G --> F
+    G --> H
+    G --> I
+```
 ---
 
 ## How to Contribute
 If you're passionate about cybersecurity, feel free to contribute to my projects or get in touch! I'm open to collaboration on new research or reverse engineering challenges.
 
 ---
-
 ## Contact
 
 <a href="https://x.com/learntocatch" target="_blank">  <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/> </a>  <a href="mailto:c-m-p-c@hotmail.com">   <img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" />
