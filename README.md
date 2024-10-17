@@ -1,4 +1,4 @@
-# CMPC - Personal GitHub Repository
+# Personal GitHub Repository
 
 Welcome to my personal GitHub repository! This space will showcase projects and contributions related to cybersecurity research, threat intelligence, reverse engineering, and more. Below is a summary of what you'll find here.
 
