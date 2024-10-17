@@ -7,6 +7,22 @@
 Welcome to my personal GitHub repository! This space will showcase projects and contributions related to cybersecurity research, threat intelligence, reverse engineering, and more. Below is a summary of what you'll find here.
 
 ---
+## Testing Lab
+
+```mermaid
+flowchart TD
+  A("Main Station") --> B("SIEM")
+    D("Kali") --> B
+    E("Domain Controller") --> B
+    F("Windows 10") --> B
+    H("Ubuntu") --> B
+    B --> G("SOAR")
+    G --> D
+    G --> E
+    G --> F
+    G --> H
+```
+---
 
 ## Projects and Areas of Focus
 
@@ -46,3 +62,5 @@ If you're passionate about cybersecurity, feel free to contribute to my projects
 ---
 Thank you for visiting my GitHub repository! Stay secure and keep exploring the world of cybersecurity.
 **CMPC** - Protect. Analyze. Innovate.
+
+```
