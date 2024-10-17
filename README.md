@@ -1,4 +1,4 @@
-# <div style="text-align: center;">Personal GitHub Repository</center>
+# <p align="center">Personal GitHub Repository</p>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/C-M-P-C/C-M-P-C.github.io)
 ![GitHub contributors](https://img.shields.io/github/contributors/C-M-P-C/C-M-P-C.github.io)
