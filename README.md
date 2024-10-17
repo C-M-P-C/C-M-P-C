@@ -36,11 +36,7 @@ Welcome to my personal GitHub repository! This space will showcase projects and 
 
 ## Testing Lab
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-<div class="mermaid">
+```mermaid
 
 flowchart TD
   A("Main Station") --> B("SIEM")
@@ -58,7 +54,7 @@ flowchart TD
     G --> H
     G --> I
 
-</div>
+```
 ---
 
 ## How to Contribute
