@@ -1,0 +1,21 @@
+# Define the directory to search (root directory)
+$rootDirectory = "C:\"
+
+# Get all directories recursively from the specified root directory
+$directories = Get-ChildItem -Path $rootDirectory -Directory -Recurse
+
+# Loop through each directory and get all files inside
+foreach ($directory in $directories) {
+    # Get all files recursively from the current directory
+    $files = Get-ChildItem -Path $directory.FullName -File
+
+    # Loop through each file and calculate its hash
+    foreach ($file in $files) {
+        # Calculate hash for each file
+        $hash = Get-FileHash -Path $file.FullName -Algorithm SHA256
+
+        # Output the file path and its corresponding hash
+        Write-Output ("File: $($file.FullName) Hash: $($hash.Hash)")
+	Write-EventLog -LogName <LogName> -Source <Application/System/Security> -EventID <ID> -EntryType Information -Message "File $($file.FullName) Hash $($hash.Hash)"
+    }
+}
