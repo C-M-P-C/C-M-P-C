@@ -1,4 +1,9 @@
-# Personal GitHub Repository
+# <div style="text-align: center;">Personal GitHub Repository</center>
+
+![GitHub repo size](https://img.shields.io/github/repo-size/C-M-P-C/C-M-P-C.github.io)
+![GitHub contributors](https://img.shields.io/github/contributors/C-M-P-C/C-M-P-C.github.io)
+![GitHub Repo stars](https://img.shields.io/github/stars/C-M-P-C/C-M-P-C.github.io)
+![Twitter Follow](https://img.shields.io/twitter/follow/learntocatch?style=social)
 
 Welcome to my personal GitHub repository! This space will showcase projects and contributions related to cybersecurity research, threat intelligence, reverse engineering, and more. Below is a summary of what you'll find here.
 
