@@ -1,0 +1,64 @@
+rule Malicious_Pumpar
+{
+    meta:
+        description = "Detects malware behaviors and file hashes"
+        author = "CMPC"
+        date = "2024-07-26"
+        reference = "https://bazaar.abuse.ch/sample/913099f1a9433f3712a85f5f703f9b976123b22256b7ad2a7fef9b824c703f2f/
+        
+    strings:
+        $cmd1 = "C:\\Windows\\System32\\cmd.exe /k move Japan Japan.cmd & Japan.cmd & exit"
+        $findstr1 = "findstr /I \"wrsa.exe opssvc.exe\""
+        $findstr2 = "findstr /I \"avastui.exe avgui.exe ekrn.exe bdservicehost.exe nswscsvc.exe sophoshealth.exe\""
+        $cmd2 = "cmd /c md 260887"
+        $cmd3 = "cmd /c copy /b Travis + Commonwealth + Momentum + Confusion + Deer + Leisure + Viagra + Calculator + Syria + Isle + Pmid + Adventure + Aaron + Patterns + Lies + Machinery 260887\\M"
+        $choice = "choice /d y /t 5"
+        $accessed_file1 = "C:\\Windows\\System32\\kernel.appcore.dll"
+        $accessed_file2 = "C:\\Users\\*\\AppData\\Local\\Temp\\File.exe"
+        $accessed_file3 = "C:\\Users\\*\\Desktop\\WrittenCalculatorsRepresentsLikeVerde"
+        $accessed_file4 = "C:\\Windows\\SellerHungry"
+        $accessed_file5 = "C:\\Users\\*\\AppData\\Local\\Temp\\LaunchValleyBoringProstores"
+        $accessed_file6 = "C:\\Users\\*\\AppData\\Local\\Temp\\ReducesWhoreEditions"
+        $accessed_file7 = "C:\\Windows\\System32\\PrisonersLingerieJohnPrior"
+        $accessed_file8 = "C:\\Windows\\System32\\JumpingJeans"
+        $accessed_file9 = "C:\\Users\\*\\AppData\\Local\\Temp\\MyspaceCalculationsNiagara"
+        $accessed_file10 = "C:\\Windows\\System32\\ReducesLatelyOldestHits"
+        $accessed_file11 = "C:\\Windows\\System32\\CompliantFormingBrotherScheduleQuantumBrothers"
+        $accessed_file12 = "C:\\Users\\*\\AppData\\Local\\Temp\\SeatHoleMichelExtensiveSubsidiaries"
+        $accessed_file13 = "C:\\Windows\\System32\\CalvinSaraRuTileSees"
+        
+        $file1 = "e071102cbc7624ab308855c1f8bf1999642be6bedc9e6a18a5eef0018e278e57"
+        $file2 = "f0b73251977c6ae98bc37a3c342327dcd45155e02198a5548d1a71c811d3dc9f"
+        $file3 = "082675fe18dd3eae06faec1f59e9b182f265107d34dc7b9e9de4187ba1315947"
+        $file4 = "0eba0038c1c1cca6d878ba03ab372630ed9a80d8f6d88bb0342658ce58d76484"
+        $file5 = "0fccc2667e9b942cf777ae024269cbd2da1449ddcdb521914503cf860ef307bf"
+        $file6 = "12e8c0bc22f7f6e7a6f7efe250050cf52590b016c479b78bbf3ba84c9a994678"
+        $file7 = "1af61c90dcc4493091a99b871076a7ea336d1d88aa7804910bec991fa52f5809"
+        $file8 = "20272d7dd4b84d62a642640bb4d3acf4d1b598b62fc695f6617a157bafda3ea9"
+        $file9 = "3e0b24806b31c37caae658d0886b07361c94ff47600f1a283cdc5a02f9889be2"
+        $file10 = "432cec5f0f0f2c132aca5d544cd11e928e2780312415f21a7dbe0a388724885f"
+        $file11 = "63d634ae8b57b14ac05ffd44e0913b48681db8e29b47d880e5b85d65394a64e3"
+        $file12 = "672245b7cb6c5303c668987b1bda3a72139eb0b65449457f00222501ce4646fa"
+        $file13 = "674f748b68e984ee3eff29362f7f1aad390f2457ad75929312c18133f11d8673"
+        $file14 = "70f05fdd5b8eeef11c5de8e93fa4eb62eb898942e32a7b795b9717c3dc27bc49"
+        $file15 = "7f6c0d96161340e845f169b6fb029277ad3a291959c9a75947f36cb19848ce92"
+        $file16 = "935109ed73a984a7aea7d9c9e88a4ee581ccc32418eb13c40b899d827417d1f7"
+        $file17 = "9cde89a0883fb55e913e62a97b26c95cc9e2a0190036dcfc3c61ce1f5aef3f78"
+        $file18 = "a13c694bcabd754bd49f6b0fe6efa653e0c9358ea52f37055aba362ffa99c145"
+        $file19 = "a8e79f0fe66ae60e2a51f9bd7da06df9b289e7f52fe9e0987ddf395c3a1fdea0"
+        $file20 = "b0ab6f9b0c3b1f10507dba83e0809e9a3a9f0c8ee46dc00c912f2a7f774d386c"
+        $file21 = "b87669ec8365b0f083f43d501585c49555b92ab9defbdf80a1b639a16496bcc5"
+        $file22 = "c731d432999b51bcfcc0920d95371c428488ae6a92320e38a83d161c19aa0b79"
+        $file23 = "ca843fdef7f9445abcc23761c63992c47aa98447df33a5b28c2d5609df7d22dd"
+        $file24 = "913099f1a9433f3712a85f5f703f9b976123b22256b7ad2a7fef9b824c703f2f"
+        $file25 = "00e68d05801e95c3207dbea1e8b448ac8960be835634df108f7286e56d0706f7"
+        $file26 = "2c4fa7a85a82163614e0c24baeee59f9f03ee237a05d7190d856665548d70d47"
+        $file27 = "7d5a8384660b5dfbc3511ae32fbd44e18d59962088208e68820be3f2668a8547"
+        $url1 = "ftp://Anonymous@147.45.47.80/download"
+        $ip = "147.45.47.80"
+
+    condition:
+        (all of ($ip,$url1,$cmd1, $tasklist, $findstr1, $findstr2, $cmd2, $cmd3, $choice) or
+        any of ($ip$accessed_file1, $accessed_file2, $accessed_file3, $accessed_file4, $accessed_file5, $accessed_file6, $accessed_file7, $accessed_file8, $accessed_file9, $accessed_file10, $accessed_file11, $accessed_file12, $accessed_file13)) or
+        any of ($ip,$file1, $file2, $file3, $file4, $file5, $file6, $file7, $file8, $file9, $file10, $file11, $file12, $file13, $file14, $file15, $file16, $file17, $file18, $file19, $file20, $file21, $file22, $file23, $file24, $file25, $file26, $file27, $url1)
+}

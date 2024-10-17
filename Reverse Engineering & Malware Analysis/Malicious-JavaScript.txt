@@ -1,0 +1,42 @@
+rule Malicious_JavaScript_Obfuscation
+{
+    meta:
+        description = "Detects obfuscated JavaScript that uses unescape and PowerShell execution"
+        author = "CMPC"
+        date = "2024-07-21"
+        reference = https://bazaar.abuse.ch/download/afef38f05f00c8c69205b413970c196469f138ebfc6f303b163407230e294139/
+
+    strings:
+        $script_start = /<script language=JavaScript>m=/
+        $meta_tag = /<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" >/
+        $vbscript_tag = /<SCRipt LanguaGE="vBscriPT">/
+        $dim_string = /DIm\s+[A-Za-z]+/
+        $powershell_command = /POWerSHElL\s+-EX\s+-ByPASS\s+-NOp\s+-W\s+1\s+-c\s+dEvIceCrEDENtIALDEPLoYmeNt/
+        $base64_encoded_command = /JG8wOVNaYiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA9ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFkZC10eVBF/
+        $url_download = /URLDownloadToFile/
+
+    condition:
+        all of them
+}
+
+
+rule Malicious_PowerShell_Decoded
+{
+    meta:
+        description = "Detects malicious PowerShell script execution with URL download"
+        author = "CMPC"
+        date = "2024-07-21"
+        reference = https://bazaar.abuse.ch/download/afef38f05f00c8c69205b413970c196469f138ebfc6f303b163407230e294139/
+
+
+    strings:
+        $powershell_start = "powershell -ex bypass -nop -w 1 -c"
+        $device_credential_deployment = "devicecredentialdeployment"
+        $system_text_encoding = "[System.Text.Encoding]"
+        $utf8_getstring = "utf8.getstring"
+        $system_convert_frombase64string = "system.convert::frombase64string"
+        $url_download_to_file = "URLDownloadToFile"
+
+    condition:
+        all of them
+}
