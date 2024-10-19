@@ -28,7 +28,7 @@ Welcome to my personal GitHub repository! This space will showcase projects and 
    - Building specialized scripts to address specific security challenges.
 
 ### 5. **Other**
-   - Free certification/courses
+   - Free certification/courses - <a href="https://github.com/C-M-P-C/CMPC/blob/main/Cybersecurity%20Research%20%26%20Threat%20Intelligence/Certification.md" target="_blank" style="color: blue; font-weight: bold;">Click here</a>
    - Tools recommandations
    - Testing Lab
 
