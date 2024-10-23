@@ -9,8 +9,6 @@
 
 <a href="http://www.github.com/C-M-P-C"><img src="https://github-readme-streak-stats.herokuapp.com/?user=C-M-P-C&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
 
-<a href="http://www.github.com/C-M-P-C"><img src="https://github-readme-activity-graph.cyclic.app/graph?username=C-M-P-C&bg_color=1c1917&color=ffffff&line=0891b2&point=ffffff&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
-
 
 Welcome to my personal GitHub repository! This space will showcase projects and contributions related to cybersecurity research, threat intelligence, reverse engineering, and more. Below is a summary of what you'll find here.
 
