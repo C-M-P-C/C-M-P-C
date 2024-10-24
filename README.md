@@ -47,6 +47,7 @@ Welcome to my personal GitHub repository! This space will showcase projects and 
    OSINT  | Pentester | Discover digital footprint | <a href="https://pentester.com/" target="_blank" style="color: blue; font-weight: bold;">Click here</a>
    OSINT | Social-Analyzer | Discover digital footprint | <a href="https://github.com/qeeqbox/social-analyzer" target="_blank" style="color: blue; font-weight: bold;">Click here</a>
    Forensics  | WhoYouCalling | Monitors network | <a href="https://github.com/H4NM/WhoYouCalling" target="_blank" style="color: blue; font-weight: bold;">Click here</a>
+   Honeypot | tpotce | All in one honeypot | <a href="https://github.com/telekom-security/tpotce" target="_blank" style="color: blue; font-weight: bold;">Click here</a>
    
 ---
 
